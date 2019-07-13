@@ -1,0 +1,43 @@
+﻿@page
+@model ABMVuelos.Pages.Vuelos.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Vuelo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vuelo.llegada)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vuelo.llegada)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vuelo.Linea)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vuelo.Linea)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vuelo.Codigo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vuelo.Codigo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vuelo.Demorado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vuelo.Demorado)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Vuelo.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
