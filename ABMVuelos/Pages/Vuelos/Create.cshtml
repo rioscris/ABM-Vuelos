@@ -2,12 +2,12 @@
 @model ABMVuelos.Pages.Vuelos.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear registro";
 }
 
-<h1>Create</h1>
+<h1>Alta de vuelos</h1>
 
-<h4>Vuelo</h4>
+<p>Ingrese a continuación la información del vuelo que desea registrar.</p>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -30,18 +30,18 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Vuelo.Demorado" /> @Html.DisplayNameFor(model => model.Vuelo.Demorado))
+                    <input class="form-check-input" asp-for="Vuelo.Demorado" /> @Html.DisplayNameFor(model => model.Vuelo.Demorado)
                 </label>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Crear nuevo vuelo" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Volver a la lista</a>
 </div>
 
 @section Scripts {

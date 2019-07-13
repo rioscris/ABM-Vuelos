@@ -2,13 +2,12 @@
 @model ABMVuelos.Pages.Vuelos.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Visualización";
 }
 
-<h1>Details</h1>
+<h1>Visualización del vuelo</h1>
 
 <div>
-    <h4>Vuelo</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -38,6 +37,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Vuelo.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Vuelo.ID">Modificar</a> |
+    <a asp-page="./Index">Volver a la lista</a>
 </div>

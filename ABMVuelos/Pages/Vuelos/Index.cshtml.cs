@@ -21,9 +21,18 @@ namespace ABMVuelos.Pages.Vuelos
 
         public IList<Vuelo> Vuelo { get;set; }
 
+        // Para seguridad y evitar posibles cadenas malintencionadas
+        [BindProperty(SupportsGet = true)]
+        public string CodigoABuscar { get; set; }
+        
         public async Task OnGetAsync()
         {
-            Vuelo = await _context.Vuelo.ToListAsync();
+            var vuelos = from v in _context.Vuelo select v;
+            if (!string.IsNullOrEmpty(CodigoABuscar))
+            {
+                vuelos = vuelos.Where(s => s.Codigo.Contains(CodigoABuscar)); //SQL LIKE
+            }
+            Vuelo = await vuelos.ToListAsync();
         }
     }
 }

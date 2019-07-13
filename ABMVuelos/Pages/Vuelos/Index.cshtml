@@ -2,14 +2,20 @@
 @model ABMVuelos.Pages.Vuelos.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Visor de vuelos";
 }
 
-<h1>Index</h1>
+<h1>Vuelos programados</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Registrar un nuevo vuelo</a>
 </p>
+<form>
+    <p>
+        Código <input type="text" asp-for="CodigoABuscar" />
+        <input type="submit" value="Buscar"/>
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -41,12 +47,20 @@
                 @Html.DisplayFor(modelItem => item.Codigo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Demorado)
+                <!--@Html.DisplayFor(modelItem => item.Demorado)--->
+                @if (item.Demorado)
+                {
+                    @string.Format("Si");
+                }
+                else
+                {
+                    @string.Format("No");
+                }
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Modificar</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Ver</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Eliminar</a>
             </td>
         </tr>
 }
